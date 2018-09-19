@@ -1,6 +1,89 @@
-h1 {
-    color: blue;
-    strong {
-        color: red;
+@import "./base.less";
+
+/*css reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul {
+list-style: none;
+}
+
+/*common css*/
+
+.layout {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.btn{
+    display: inline-block;
+    width: 310px;
+    line-height: 56px;
+    background: linear-gradient(to right, @lightColor1, @lightColor2);
+    border-radius: 56px;
+    text-align: center;
+    color: #fff;
+    border: 6px solid @lightBorderColor;
+
+    &:hover{
+        background: linear-gradient(to right, @lightColor2, @lightColor1);
+    }
+}
+
+/* page css */
+
+body {
+    font: 14px/1.5 Arial;
+    color: @textThemeColor;
+}
+
+.head {
+    background-color: @ThemeColor;
+    height: 100vh;
+    padding-top: 40px;
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+        a {
+            color: #fff;
+
+            &:hover {
+                color: @lightColor2;
+            }
+        }
+        .menu {
+            display: flex;
+        }
+            li {
+                margin-left: 20px;
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 20px;
+                    height: 4px;
+                    
+                    border-radius: 4px;
+                }
+            }
+        .extra {
+            margin-left: auto;
+        }
+    .logo{
+        img{
+            height: 45px;
+        }
     }
 }
